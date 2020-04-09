@@ -2,7 +2,7 @@ version: "3"
 
 services:
   vote:
-    build: ./vote
+    image: mudu/example-voting-vote:0.1
     command: python app.py
     volumes:
      - ./vote:/app
@@ -13,7 +13,7 @@ services:
       - back-tier
 
   result:
-    build: ./result
+    image: mudu/example-voting-result:0.1
     command: nodemon server.js
     volumes:
       - ./result:/app
